@@ -34,7 +34,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Hide Mobirise Banner
-        run: "echo 'section.display-7 {display: none !important;}' > ./assets/mobirise/css/mbr-additional.css"
+        run: "echo 'section.display-7 {display: none !important;}' >> ./assets/mobirise/css/mbr-additional.css"
+      - name: Minify HTML
+        uses: emepetres/html-minifier-action@v1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
