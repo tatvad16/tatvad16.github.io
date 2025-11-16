@@ -31,14 +31,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v6.0.0
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Hide Mobirise Banner
         run: "echo 'section.display-7 {display: none !important;}' >> ./assets/mobirise/css/mbr-additional.css"
       - name: Minify HTML
-        uses: emepetres/html-minifier-action@v1
+        uses: DrA1ex/pages-minify@v1.0.3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
