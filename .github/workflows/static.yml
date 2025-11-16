@@ -35,6 +35,8 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Hide Mobirise Banner
         run: "echo 'section.display-7 {display: none !important;}' >> ./assets/mobirise/css/mbr-additional.css"
+      - name: Remove project file
+        run: "rm -f ./project.mobirise"
       - name: Minify HTML
         uses: DrA1ex/pages-minify@v1.0.3
       - name: Upload artifact
